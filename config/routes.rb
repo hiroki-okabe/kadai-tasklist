@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'tasklistdesus/create'
+
+  get 'tasklistdesus/destroy'
+
   root to: 'toppages#index'
   
   get 'login', to: 'sessions#new'
@@ -9,4 +13,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :new, :create]
   
   resources :tasks
+  
+  resources :tasklistdesus, only: [:create, :destroy]
 end
