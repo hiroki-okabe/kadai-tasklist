@@ -1,15 +1,16 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
-      <%= form_for(@tasklistdesu) do |f| %>
+      <%= form_for(@task) do |f| %>
         <div class="form-group">
-          <%= f.text_area :content, class: 'form-control', row: 5 %>
+          <%= f.text_field :content, class: 'form-control' %>
+          <%= f.text_field :status, class: 'form-control' %>
         </div>
         <%= f.submit 'Task', class: 'btn btn-primary btn-block' %>
       <% end %>
     </aside>
     <div class="col-xs-8">
-      <%= render 'tasklistdesus/tasklistdesus', tasklistdesus: @tasklistdesus %>
+      <%= render 'tasks/tasks', tasks: @tasks %>
     </div>
   </div>
 <% else %>
